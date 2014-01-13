@@ -22,7 +22,9 @@ RUN dpkg-divert --local --rename --add /sbin/initctl
 ENV DEBIAN_FRONTEND noninteractive
 
 ## MYSQL
-RUN apt-get install -y -q mysql-client php5-mysql
+RUN apt-get install -y -q mysql-server mysql-client 
+### Additions to MYSQL
+RUN apt-get install -y -q php5-mysql
 
 #RUN /bin/rm -rf /var/lib/mysql/*
 
